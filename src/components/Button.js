@@ -1,4 +1,4 @@
-import PropTypes from 'prop-types' // in order to add default props
+// import PropTypes from 'prop-types' // in order to add default props
 
 const Button = (props) => {
     
@@ -13,9 +13,9 @@ const Button = (props) => {
  
 
 
-Button.propTypes = {
-    text: PropTypes.string,
-    color: PropTypes.string,
+// Button.propTypes = {
+//     text: PropTypes.string,
+//     color: PropTypes.string,
 
-}
+// }
 export default Button;

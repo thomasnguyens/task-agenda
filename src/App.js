@@ -1,5 +1,5 @@
 import './App.css';
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Header from './components/Header';
 import React from 'react';
 import Tasks from './components/Tasks';
@@ -8,18 +8,29 @@ import AddTask from './components/AddTask';
 function App() {
   // adding a boolean useState, shows 'showAddTask' by default, we want button to toggle add
   const [showAddTask, setShowAddTask] = useState(false)
-  const [tasks, setTasks] = useState('')
+  const [tasks, setTasks] = useState([])
 
-    // addTaskHandler()
-    const addTaskHandler = ((task) => {
-      // since we know the new tasks do get called, we can add it to state.
-      // console.log(task);
+  // useEffect(() => {
+  //   const fetchTasks = async () => {
+  //     const res = await fetch('http://localhost:5000/tasks')
+  //     const data = await res.json()
 
-      // first we create id for the new task.
-      const id = Math.floor(Math.random() * 10000) + 1;
-      const newTask = {id, ...task} // adds each id to every new task
-      // we want to set the current tasks but also add the newTasks (inputted) as well
-      setTasks([...tasks, newTask]); 
+  //     console.log(data) 
+  //   }
+
+  //   fetchTasks()
+  // }, []) 
+
+  // addTaskHandler()
+  const addTaskHandler = ((task) => {
+    // since we know the new tasks do get called, we can add it to state.
+    // console.log(task);
+
+    // first we create id for the new task.
+    const id = Math.floor(Math.random() * 10000) + 1;
+    const newTask = {id, ...task} // adds each id to every new task
+    // we want to set the current tasks but also add the newTasks (inputted) as well
+    setTasks([...tasks, newTask]); 
 
     })
 
